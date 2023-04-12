@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Input, Button, Form, Label } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
-import { selectContactsItems, selectContacts } from 'redux/selectors';
+import { selectContactsItems } from 'redux/selectors';
 
 export default function ContactsForm() {
   const [name, setName] = useState('');
@@ -10,7 +10,6 @@ export default function ContactsForm() {
 
   const dispatch = useDispatch();
   const contacts = useSelector(selectContactsItems);
-  const { error } = useSelector(selectContacts);
 
   const handleInputChange = event => {
     const { name, value } = event.currentTarget;
